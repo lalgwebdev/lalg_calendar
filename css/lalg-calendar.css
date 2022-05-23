@@ -1,0 +1,24 @@
+
+input.form-time {  visibility: hidden; }
+input.form-time.required {  visibility: visible; }
+
+div.calendar.monthview.arts\&books {background-color: rgb(204,204,255) !important;}
+div.calendar.monthview.crafts\&gardens {background-color: rgb(204,255,204) !important;}
+div.calendar.monthview.food\&drink {background-color: rgb(225,167,122) !important;}
+div.calendar.monthview.general {background-color: rgb(255,229,204) !important;}
+div.calendar.monthview.languages {background-color: rgb(196,220,232) !important;}
+div.calendar.monthview.newgroups {background-color: rgb(244,200,200) !important;}
+div.calendar.monthview.social {background-color: rgb(255,204,255) !important;}
+div.calendar.monthview.sports\&games {background-color: rgb(255,153,202) !important;}
+div.calendar.monthview.trips\&events {background-color: rgb(193,208,185) !important;}
+div.calendar.monthview.walking {background-color: rgb(240,230,163) !important;}
+
+div.calendar {font-size: 1.1em  !important;}
+div.calendar-calendar td {color: black;}
+div.lalg-calendar h3 {    text-align: center !important; font-size: 2.7em !important;}
+div.calendar-calendar tr.single-day {background-color: #ddd  !important;}
+
+div.lalg-calendar header {display: flex; justify-content: center;}
+div.lalg-calendar header h3 {padding-right: 3em;}
+
+
