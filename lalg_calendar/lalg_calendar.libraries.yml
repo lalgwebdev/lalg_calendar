@@ -1,0 +1,9 @@
+lalg_calendar:
+  css:
+    theme:
+      css/lalg-calendar.css: {}
+  js:
+    js/lalg_calendar.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,43 @@
+<?php
+/**
+ * Calendar - when add another date, make the time the same as the first date/time row and don't allow it to be changed
+ *
+ */
+use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\ViewExecutable;
+
+
+/**
+* Implements hook_views_pre_render().
+*/
+function lalg_calendar_views_pre_render(ViewExecutable $view) {
+   
+  if (isset($view) && ($view->storage->id() == 'toms_calendar_view_3')) {
+    $view->element['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+  }
+}
+
+
+/**
+ * Implements hook_form_node_event_form_edit_alter().
+ */
+function lalg_calendar_form_node_event_form_edit_alter(&$form, $form_state, $form_id) { 
+  $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+} 
+
+/**
+ * Implements hook_form_node_event_form_alter().
+ */
+function lalg_calendar_form_node_event_form_alter(&$form, $form_state, $form_id) {
+  $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+}  
+
+/**
+ * Implements hook_form_alter().
+ */
+function lalg_calendar_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_event_edit_form') {
+    $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+  }   
+}
