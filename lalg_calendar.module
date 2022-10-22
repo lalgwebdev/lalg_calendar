@@ -9,35 +9,63 @@ use Drupal\views\ViewExecutable;
 
 
 /**
+* This sets a date in the event instance which the calendar can use
+*/
+function lalg_calendar_recurring_events_event_instance_alter(array &$event_instance = []) {
+  $event_instance['field_calendar_compatible_event_'] = $event_instance['date']['value']; 
+}
+
+
+/**
 * Implements hook_views_pre_render().
 */
 function lalg_calendar_views_pre_render(ViewExecutable $view) {
-   
-  if (isset($view) && ($view->storage->id() == 'toms_calendar_view_3')) {
+  
+  if (isset($view) && ($view->storage->id() == 'lalg_calendar')) {
     $view->element['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
   }
+  
+  if (isset($view) && ($view->storage->id() == 'lalg_calendar_fullcalendar')) {
+    $view->element['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+  }
+  
+/** old calendar   
+ * if (isset($view) && ($view->storage->id() == 'toms_calendar_view_3')) {
+ *   $view->element['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+ * }
+ */ 
+  
+
+  
 }
+
 
 
 /**
  * Implements hook_form_node_event_form_edit_alter().
+ * old form
+
+ *function lalg_calendar_form_node_event_form_edit_alter(&$form, $form_state, $form_id) { 
+ *  $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+ *} 
  */
-function lalg_calendar_form_node_event_form_edit_alter(&$form, $form_state, $form_id) { 
-  $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
-} 
 
 /**
  * Implements hook_form_node_event_form_alter().
+ * old form
+ * function lalg_calendar_form_node_event_form_alter(&$form, $form_state, $form_id) {
+ *  $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+ *}  
  */
-function lalg_calendar_form_node_event_form_alter(&$form, $form_state, $form_id) {
-  $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
-}  
 
 /**
  * Implements hook_form_alter().
+ * old form
+ * function lalg_calendar_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+ *  if ($form_id == 'node_event_edit_form') {
+ *    $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
+ * }   
+ *}
  */
-function lalg_calendar_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'node_event_edit_form') {
-    $form['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
-  }   
-}
+
+

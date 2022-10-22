@@ -8,6 +8,12 @@
       $(".hide").each(function() {
         $(this).parents(".calendar").addClass($(this).text().trim().toLowerCase().split(" ").join(""));
       });  
+	  
+	  $(".hidefc").each(function() {
+        $(this).parents(".fc-content").addClass($(this).text().trim().toLowerCase().split(" ").join(""));
+      });  
+	  
+
       
       // When editing content, automatically populate time fields to that of the first time field
       $(".form-date").change(function() {       
