@@ -33,10 +33,7 @@ function lalg_calendar_views_pre_render(ViewExecutable $view) {
  * if (isset($view) && ($view->storage->id() == 'toms_calendar_view_3')) {
  *   $view->element['#attached']['library'][] = 'lalg_calendar/lalg_calendar';
  * }
- */ 
-  
-
-  
+ */   
 }
 
 
@@ -67,5 +64,16 @@ function lalg_calendar_views_pre_render(ViewExecutable $view) {
  * }   
  *}
  */
-
+ 
+ 
+ function lalg_calendar_entity_presave(\Drupal\Core\Entity\EntityInterface &$entity) {
+    if ($entity->getEntityTypeId() == 'eventinstance') {
+	  if ($entity->field_calendar_compatible_event_) {
+		if ($entity->date) {
+			$entity->field_calendar_compatible_event_->value = $entity->date->value;
+		}
+	  }
+	}	
+ }	 
+	 
 
