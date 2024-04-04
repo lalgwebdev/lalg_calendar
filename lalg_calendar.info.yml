@@ -3,4 +3,4 @@ name: 'LALG Calendar'
 description: 'Calendar features'
 package: 'Custom'
 core_version_requirement: ^9 || ^10
-version: "1.1.0"
+version: "1.2.0"

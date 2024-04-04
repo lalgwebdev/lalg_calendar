@@ -1,3 +1,18 @@
+button.button_today {border: none; color: white; padding: 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 10px 0 20px 100px; cursor: pointer; border-radius: 10px;  background-color: #04AA6D; height: fit-content;}
+	
+div.lalg-block-fullcalendarlegend p.legend_text {font-weight: bold; margin-bottom: 6px;}
+div.lalg-block-fullcalendarlegend ul.legend_colours {padding-left: 0;}
+div.lalg-block-fullcalendarlegend li {cursor: pointer; border: 1px solid white;}
+div.lalg-block-fullcalendarlegend li:hover {
+   opacity: 80%;
+   border: 1px solid #3270c5;
+}
+
+div.calendar-calendar div.month-view table.full td div.inner div.day {
+    width: auto;
+    float: none;
+    text-wrap: nowrap;
+}
 
 input.form-time {  visibility: hidden; }
 input.form-time.required {  visibility: visible; }
@@ -5,7 +20,7 @@ input.form-time.required {  visibility: visible; }
 div.calendar.monthview.arts\&books {background-color: rgb(204,204,255) !important;}
 div.calendar.monthview.crafts\&gardens {background-color: rgb(204,255,204) !important;}
 div.calendar.monthview.food\&drink {background-color: rgb(225,167,122) !important;}
-div.calendar.monthview.general {background-color: rgb(255,229,204) !important;}
+div.calendar.monthview.general {background-color: rgb(255,255,204) !important;}
 div.calendar.monthview.languages {background-color: rgb(196,220,232) !important;}
 div.calendar.monthview.newgroups {background-color: rgb(244,200,200) !important;}
 div.calendar.monthview.social {background-color: rgb(255,204,255) !important;}
@@ -19,7 +34,13 @@ div.lalg-calendar h3 {    text-align: center !important; font-size: 2.7em !impor
 div.calendar-calendar tr.single-day {background-color: #ddd  !important;}
 
 div.lalg-calendar header {display: flex; justify-content: center;}
-div.lalg-calendar header h3 {padding-right: 3em;}
+
+@media (min-width: 767px) {
+   div.lalg-calendar header h3 {padding-right: 3em;}
+}
+@media (max-width: 767px) {
+   div.lalg-calendar header {display: block;}
+}
 
 div.calendar span.hide {display: none;}
 div.calendar span.lalg-events-calendar-group a {font-weight: normal; color: black;}
