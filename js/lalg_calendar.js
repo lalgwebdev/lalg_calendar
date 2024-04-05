@@ -3,7 +3,18 @@
   Drupal.behaviors.calendarJump = {
     attach: function (context, settings) {
 	  $("button.button_today").click(function(){
-	    let todaydate = $('div.calendar-calendar td.today:first');
+	    const today = new Date();
+		const year = today.getFullYear();
+		var month = today.getMonth() + 1;
+		if (month < 10) {
+		  month = '0' + month;
+		}
+		var day = today.getDate();
+		if (day < 10) {
+		  day = '0' + day;
+		}
+		var dateid = 'lalg_calendar-' + year + '-' + month + '-' + day + '-date-box';
+		let todaydate = $('td#'+dateid);
 	    $("body, html").animate({	scrollTop: $( todaydate ).offset().top }, 600);	 
 	  });	
     }
@@ -12,6 +23,21 @@
 
   Drupal.behaviors.calendarClicks = {
     attach: function (context, settings) {
+		
+	  function hide_or_show_jump_button() {
+		const today = new Date();
+		const year = today.getFullYear();		
+		const month_number = today.getMonth();
+		const months_long = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var month_name = months_long[month_number];
+		var month_year = month_name + ' ' + year
+		let month_year_showing = $('div.lalg-calendar h3').text().trim();  
+		if (month_year == month_year_showing) {	
+			$('button.button_today').removeClass('dim_button');
+		} else {
+			$('button.button_today').addClass('dim_button');
+		}  
+	  }
 		
 	  function changeofmonth() {
 		// When displaying the calendar, add a class which represents the group type  
@@ -97,6 +123,7 @@
 		  
 	  }
 	  
+	  hide_or_show_jump_button();
 	  changeofmonth();
 	  addDaysOfWeek();
 	

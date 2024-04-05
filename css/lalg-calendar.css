@@ -1,4 +1,6 @@
 button.button_today {border: none; color: white; padding: 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 10px 0 20px 100px; cursor: pointer; border-radius: 10px;  background-color: #04AA6D; height: fit-content;}
+button.button_today.dim_button {background-color: #04aa6d40; cursor: default;}
+	
 	
 div.lalg-block-fullcalendarlegend p.legend_text {font-weight: bold; margin-bottom: 6px;}
 div.lalg-block-fullcalendarlegend ul.legend_colours {padding-left: 0;}
