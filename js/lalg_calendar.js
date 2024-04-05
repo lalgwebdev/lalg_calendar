@@ -15,7 +15,8 @@
 		}
 		var dateid = 'lalg_calendar-' + year + '-' + month + '-' + day + '-date-box';
 		let todaydate = $('td#'+dateid);
-	    $("body, html").animate({	scrollTop: $( todaydate ).offset().top }, 600);	 
+	    $("body, html").animate({	scrollTop: $( todaydate ).offset().top }, 600);	
+		$("table").animate({	scrollLeft: $( todaydate ).offset().left }, 600);		
 	  });	
     }
   }
