@@ -1,5 +1,22 @@
 (function( $, Drupal ) {
 	
+  Drupal.behaviors.calendarSpecificMonth = {
+    attach: function (context, settings) {
+	  $('#lalg-calendar-specific-month').change(function(){
+		var month_picked = $('#lalg-calendar-specific-month').val();
+		var url_chosen = window.location + '/' + month_picked;
+		window.location.href = url_chosen;
+	  });
+	}
+  }
+  Drupal.behaviors.calendarUrlChange = {
+    attach: function (context, settings) {
+	  $('#lalg-calendar-specific-month').each(function(){
+		window.history.pushState(null, null, '/lalg-calendar');
+	  });
+	}
+  }
+	
   Drupal.behaviors.calendarJump = {
     attach: function (context, settings) {
 	  $("button.button_today").click(function(){
@@ -16,7 +33,7 @@
 		var dateid = 'lalg_calendar-' + year + '-' + month + '-' + day + '-date-box';
 		let todaydate = $('td#'+dateid);
 	    $("body, html").animate({	scrollTop: $( todaydate ).offset().top }, 600);	
-		$("table").animate({	scrollLeft: $( todaydate ).offset().left }, 600);		
+		$("table").animate({        scrollLeft: $( todaydate ).offset().left }, 600);  
 	  });	
     }
   }

@@ -4,6 +4,7 @@ lalg_calendar:
       css/lalg-calendar.css: {}
   js:
     js/lalg_calendar.js: {}
+    js/lalg-previous-months-dropdown.js: {}
   dependencies:
     - core/jquery
     - core/drupal
