@@ -77,7 +77,7 @@
 	  function addDaysOfWeek() {
 		  $("td[headers='Monday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Mon ".concat(oldtext, " ", shortMonthName);
@@ -86,7 +86,7 @@
 		  });  
 		  $("td[headers='Tuesday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Tue ".concat(oldtext, " ", shortMonthName);
@@ -95,7 +95,7 @@
 		  });
 		  $("td[headers='Wednesday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Wed ".concat(oldtext, " ", shortMonthName);
@@ -104,7 +104,7 @@
 		  });
 		  $("td[headers='Thursday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Thu ".concat(oldtext, " ", shortMonthName);
@@ -113,7 +113,7 @@
 		  });
 		  $("td[headers='Friday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Fri ".concat(oldtext, " ", shortMonthName);
@@ -122,7 +122,7 @@
 		  });
 		  $("td[headers='Saturday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Sat ".concat(oldtext, " ", shortMonthName);
@@ -131,7 +131,7 @@
 		  });
 		  $("td[headers='Sunday'] .inner .day").each(function() {
 			  if (!isNaN($(this).text().trim())) {
-				  let fullDate = $(this).closest("td").attr("date-date"); 
+				  let fullDate = $(this).closest("td").attr("data-date"); 
 				  let shortMonthName = getMonthName(fullDate);
 				  let oldtext = $(this).text().trim();
 				  let newtext = "Sun ".concat(oldtext, " ", shortMonthName);
